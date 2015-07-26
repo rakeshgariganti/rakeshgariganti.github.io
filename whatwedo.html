@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+
+		<style type="text/css" id="page-css">
+			/* Styles specific to this particular page */
+			@font-face {
+    font-family: 'lucida';
+    src: url('css/font/lucida.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+			body
+			{
+				font-family:lucida;
+				overflow: auto;
+				height: 100%;
+			}
+			#content
+			{
+			}
+		</style>
+
+		<!-- latest jQuery direct from google's CDN -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<!-- the mousewheel plugin -->
+		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+		<!-- the jScrollPane script -->
+		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" id="sourcecode">
+			$(function()
+			{
+				var win = $(window);
+				// Full body scroll
+				var isResizing = false;
+				win.bind(
+					'resize',
+					function()
+					{
+						if (!isResizing) {
+							isResizing = true;
+							var container = $('#content');
+							// Temporarily make the container tiny so it doesn't influence the
+							// calculation of the size of the document
+							container.css(
+								{
+									'width': 1,
+									'height': 1
+								}
+							);
+							// Now make it the size of the window...
+							container.css(
+								{
+									'width': win.width(),
+									'height': win.height()
+								}
+							);
+							isResizing = false;
+							container.jScrollPane(
+								{
+									'showArrows': true
+								}
+							);
+						}
+					}
+				).trigger('resize');
+
+				// Workaround for known Opera issue which breaks demo (see
+				// http://jscrollpane.kelvinluck.com/known_issues.html#opera-scrollbar )
+				$('body').css('overflow', 'hidden');
+
+				// IE calculates the width incorrectly first time round (it
+				// doesn't count the space used by the native scrollbar) so
+				// we re-trigger if necessary.
+				if ($('#full-page-container').width() != win.width()) {
+					win.trigger('resize');
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="content">
+<font style="font-family:lucida;color:black;font-size:18px;"> 
+<h2>What We Do!!</h2>
+<p>
+We aim to provide solar charging stations, water pumping plants and food
+preservation and cooling systems in villages which are unable to access the
+conventional source of electricity and possess no such facilities. Also, small
+products like solar home lighting systems, portable mobile phone chargers and
+solar street lights are part of this initiative. <br><br>
+
+‘free Spirits’ is an initiative to a greener world. Powering homes is not the only motive, but empowering people
+with skills and knowledge to operate integrates our vision. This will ensure the
+use of products efficiently and will ensure employment opportunities. The
+products and the journey so far corroborate the aim to innovate products that
+will save money and preserve the conventional sources of energy.
+</p>
+<p><h3>1. Introduction</h3>
+The use of direct solar energy in India has evolved for more than three thousand years. Most
+prominent of these are the drying of foods for preservation and assured availability during non-
+crop periods of the year, the drying of garments/clothes, and therapeutic protocols for human
+and animal health. This direct use of solar energy continues while modern technologies have
+made the rural life dramatically different. The main sources of energy for rural communities of
+India are electricity, gas, and petroleum. With increasing population, henceforth, increasing
+need of energy, the present sources are unable to satisfy this rise in demand.
+</p>
+<p>
+ In addition to this, burning of wood, charcoal, and other materials have negative environmental
+consequences. For these reasons a paradigm shift is needed and that calls for extensive use of
+non conventional sources of energy (solar, wind, biomass etc). India is a developing country,
+and its economy is largely dependent on agriculture. But, in this era of modernization rural
+India has been completely neglected. Therefore, targeting the agriculture sector of India for the
+innovative use of solar power will directly contribute to the economy and development of the
+nation. The intelligent and innovative uses of solar energy will render cost effective, reliable,
+and environmentally friendly solutions for rural India.
+</p>
+<p>
+<h3>2. The Technological Challenges</h3>
+The main challenge we see for the solar power utilization in rural India is to maintain the values
+and culture of the farm communities while providing solar based technology to exponentially
+enhance the quality of life of the inhabitants. This requires a deliberate understanding of the
+needs of rural inhabitants and innovative approach for implementing and integrating solar
+power in their life style.
+</p>
+<p>
+Cost is a major concern for rural India. Rural inhabitants tend to be very cost conscientious and
+most often do not have the monetary resources needed for high-tech solutions. They tend to
+do mental trade-offs on a daily basis to economize and use their resources most effectively.
+Borrowing is not a welcome practice in these communities. In view of this, any solar
+technological solutions have to be cost-effective.
+</p>
+<p>
+The challenge is to develop devices and appliances for rural applications that can stand rough
+use by persons not technologically savvy. For this reason, technologies have to be rugged,
+reliable, and easy to use and repair. The ease of maintenance is essential for successful
+technology intervention. Furthermore, costs associated with repair and maintenance should be
+minimal. Weather changes have dramatic effect on the amount of solar energy that can be
+harvested. For this reason, technological approaches should work in cloudy, rainy, and winter
+weather because the farm work continues in all seasons.
+</p>
+<!-- dont edit beyond this point -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</font>
+</div>
+
+</body>
+</html>

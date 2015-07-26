@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+
+		<style type="text/css" id="page-css">
+			/* Styles specific to this particular page */
+			@font-face {
+    font-family: 'lucida';
+    src: url('css/font/lucida.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+			body
+			{
+				font-family:lucida;
+				overflow: auto;
+				height: 100%;
+			}
+			#content
+			{
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" id="sourcecode">
+			$(function()
+			{
+				var win = $(window);
+				var isResizing = false;
+				win.bind(
+					'resize',
+					function()
+					{
+						if (!isResizing) {
+							isResizing = true;
+							var container = $('#content');
+							container.css(
+								{
+									'width': 1,
+									'height': 1
+								}
+							);
+							container.css(
+								{
+									'width': win.width(),
+									'height': win.height()
+								}
+							);
+							isResizing = false;
+							container.jScrollPane(
+								{
+									'showArrows': true
+								}
+							);
+						}
+					}
+				).trigger('resize');
+				$('body').css('overflow', 'hidden');
+				if ($('#full-page-container').width() != win.width()) {
+					win.trigger('resize');
+				}
+			});
+		</script>
+		<script>
+		$(document).ready(function(){
+				$("#rashmib").click(function(){
+					$("#rashmib").hide(500)
+					$("#rashmimore").fadeIn(500);
+				});
+				$("#pilotb").click(function(){
+					$("#pilotb").hide(500)
+					$("#pilotmore").fadeIn(500);
+				});
+		});
+		</script>
+	</head>
+	<body>
+		<div id="content">
+			<font style="font-family:lucida;color:black;font-size:18px;"> 
+<br>
+
+<h2>Projects</h2>
+
+<h4>Project Rashmi-August 25, 2013</h4>
+<p>
+A small village in Mirzapur, Uttar Pradesh electricity is like a distant dream for the
+inhabitants. We inquired about the problems faced by the villagers on a daily basis.
+On interviewing some of them, one of the problems was considered and then
+concluded that they pay Rs. 5 every alternate day to charge their mobile phones. At
+times they wait for hours for their turn. The monthly cost of charging their mobile
+phones approximates around Rs. 100 – 120. To address this problem, we have come
+up with Project RASHMI, which aims to provide solar mobile phone chargers to the
+villagers. The advantage being the phone is charged during the day without paying
+any rent to the owner of the station and also the long queues would be rejected .Every
+villager would have their personal charging station with them. The monthly
+expenditure would drop to Rs. 19 for mobile phone charging.
+</p>
+<center><input type="button" id="rashmib" value="ReadMore" style="width:100px;height:30px;background-color:white;border:1px;color:black;cursor:pointer;font-family:purisa;-webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);-moz-box-shadow:    0px 0px 20px 0px rgba(50, 50, 50, 0.75);box-shadow:         0px 0px 20px 0px rgba(50, 50, 50, 0.75);"/></center>
+<div id="rashmimore" style="display:none;">
+On interviewing some of them, one of the problems was considered and then
+concluded that they pay Rs. 5 every alternate day to charge their mobile phones. At
+times they wait for hours for their turn. The monthly cost of charging their mobile
+phones approximates around Rs. 100 – 120. To address this problem, we have come
+up with Project RASHMI, which aims to provide solar mobile phone chargers to the
+villagers. The advantage being the phone is charged during the day without paying
+any rent to the owner of the station and also the long queues would be rejected .Every
+villager would have their personal charging station with them. 
+</div>
+
+<p>
+<h4>Pilot Project 1 - First Milestone August 12, 2013</h4>
+Today we reached a milestone in providing green and free electricity to the world.
+Ten families living in dark for ages experienced the coolness of the fan and
+brightness in the dark. We have installed small solar setups to 10 poor families in
+village Bhajju, Shamli district and village Kamhera, Muzzafarnagar district of Uttar
+Pradesh free of cost.
+</p>
+<center><input type="button" id="pilotb" value="ReadMore" style="width:100px;height:30px;background-color:white;border:1px;color:black;cursor:pointer;font-family:purisa;-webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);-moz-box-shadow:    0px 0px 20px 0px rgba(50, 50, 50, 0.75);box-shadow:         0px 0px 20px 0px rgba(50, 50, 50, 0.75);"/></center>
+<div id="pilotmore" style="display:none;">
+<p>
+A PIR based motion sensor device which detects the motion of body heat and allows
+the device to turn ON/OFF accordingly. Once the motion is detected, the appliance is
+turned ON for an adjustable delay time. If the motion is continued to be detected, the
+delay time extends.
+For details about installing this device in your home, office or garden and to get a
+quote, email your details to support@freespirits.in
+</p>
+</div>
+
+
+</p>
+
+<!-- dont edit beyond this point -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</font>
+</div>
+
+</body>
+</html>

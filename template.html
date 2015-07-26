@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+
+		<style type="text/css" id="page-css">
+			/* Styles specific to this particular page */
+			body
+			{
+				overflow: auto;
+				height: 100%;
+			}
+			#content
+			{
+			}
+		</style>
+
+		<!-- latest jQuery direct from google's CDN -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#rashmib").click(function(){
+					$("#rashmib").hide(500)
+					$("#rashmimore").fadeIn(500);
+				});
+				$("#pilotb").click(function(){
+					$("#pilotb").hide(500)
+					$("#pilotmore").fadeIn(500);
+				});
+			});
+		</script>
+		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+		<!-- the jScrollPane script -->
+		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" id="sourcecode">
+			$(function()
+			{
+				var win = $(window);
+				// Full body scroll
+				var isResizing = false;
+				win.bind(
+					'resize',
+					function()
+					{
+						if (!isResizing) {
+							isResizing = true;
+							var container = $('#content');
+							// Temporarily make the container tiny so it doesn't influence the
+							// calculation of the size of the document
+							container.css(
+								{
+									'width': 1,
+									'height': 1
+								}
+							);
+							// Now make it the size of the window...
+							container.css(
+								{
+									'width': win.width(),
+									'height': win.height()
+								}
+							);
+							isResizing = false;
+							container.jScrollPane(
+								{
+									'showArrows': true
+								}
+							);
+						}
+					}
+				).trigger('resize');
+
+				// Workaround for known Opera issue which breaks demo (see
+				// http://jscrollpane.kelvinluck.com/known_issues.html#opera-scrollbar )
+				$('body').css('overflow', 'hidden');
+
+				// IE calculates the width incorrectly first time round (it
+				// doesn't count the space used by the native scrollbar) so
+				// we re-trigger if necessary.
+				if ($('#full-page-container').width() != win.width()) {
+					win.trigger('resize');
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="content">
+
+</div>
+
+</body>
+</html>
