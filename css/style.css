@@ -145,7 +145,8 @@ html,body{
 	right: 13%;
 	width:35%;
 	font-size:20px;
-	background:green;
+	background:#FFFFFF;
+	opacity:.50; 
 	/*
 	background: -webkit-linear-gradient(left, rgba(255,255,255,0) ,rgba(110,205,39,1));
 	background: -o-linear-gradient(left, rgba(255,255,255,0) ,rgba(110,205,39,1)); 
